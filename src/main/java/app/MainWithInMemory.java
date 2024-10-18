@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
 import data_access.InMemoryUserDataAccessObject;
-import entity.CommonUserFactory;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.logged_in.LoggedInViewModel;
 import interface_adapter.login.LoginViewModel;
@@ -53,7 +52,7 @@ public class MainWithInMemory {
         final SignupViewModel signupViewModel = new SignupViewModel();
 
         final InMemoryUserDataAccessObject userDataAccessObject =
-                new InMemoryUserDataAccessObject(new CommonUserFactory());
+                new InMemoryUserDataAccessObject();
 
         final SignupView signupView = SignupUseCaseFactory.create(viewManagerModel, loginViewModel,
                 signupViewModel, userDataAccessObject);
